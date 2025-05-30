@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <InputTag :onTagsChange="handleOnTagsChange"/>
+  <InputTag @onTagsChange="handleOnTagsChange"/>
 </template>
 
 <style scoped>

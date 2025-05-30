@@ -1,6 +1,6 @@
 <script>
     export default {
-        props: ['onTagsChange'],
+        emits: ['onTagsChange'],
         data() {
             return{
                 currentValue: '',
@@ -11,7 +11,7 @@
             handleKeyDown(event){
                 if(event.key == 'Backspace' && this.currentValue !== ''){
                     this.tags.pop()
-                    this.onTagsChange(this.tags)
+                    this.$emit('onTagsChange', this.tags)
                     this.currentValue = ''
                 }
                 },
@@ -20,13 +20,14 @@
                     const exist = this.tags.some(item => item === this.currentValue )
                     if(!exist){
                         this.tags.push(this.currentValue)
+                        this.$emit('onTagsChange', this.tags)
                         this.currentValue = ''
                     }
                 }
             },
             deleteTag(tag){
                 this.tags = this.tags.filter((item) => item !== tag)
-                 this.onTagsChange(this.tags)
+                this.$emit('onTagsChange', this.tags)
             }
         }
     }
