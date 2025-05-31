@@ -1,9 +1,9 @@
 <script setup>
-import TodoView from './components/TodoView.vue';
+import TodosView from './components/TodosView.vue';
 </script>
 
 <template>
-    <TodoView/>
+    <TodosView/>
 </template>
 
 <style scoped>
