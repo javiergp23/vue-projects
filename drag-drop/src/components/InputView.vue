@@ -14,7 +14,7 @@ const handleSubmit = () => {
 
 <template>
     <form action="" @submit.prevent="handleSubmit">
-        <input type="text" v-bind="text">
+        <input type="text" v-model="text">
     </form>
 </template>
 
