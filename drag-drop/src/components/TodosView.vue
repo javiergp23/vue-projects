@@ -56,5 +56,19 @@ let boards = reactive([
 </template>
 
 <style scoped>
+    .boards{
+        display: flex;
+        gap: 10px;
+    }
 
+    .board{
+        background-color: #efefef;
+        padding: 5px;
+    }
+
+    .item{
+        background-color: white;
+        padding: 10px;
+        box-sizing: border-box;
+    }
 </style>
