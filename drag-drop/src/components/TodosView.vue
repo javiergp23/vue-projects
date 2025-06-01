@@ -40,18 +40,38 @@ const handleNewItem = (text, board) =>{
     })
 }
 
+const handleNewBoard = () => {
+    const name = prompt('Name of the board')
+    if(!!name){
+        boards.push({
+            id: crypto.randomUUID(),
+            name: name,
+            items: [],
+        })
+    }
+}
+
+
+const startDrag = () => {
+
+}
+
+const onDrop = () => {
+
+}
+
 </script>
 
 <template>
     <nav>
         <ul>
-            <li><a href="">Create board</a></li>
+            <li class="p-2 text-bold text-center"><a href="" @click.prevent="handleNewBoard">Create board</a></li>
         </ul>
     </nav>
     <div class="boards-container">
         <div class="boards">
-            <div class="board" v-for="board in boards" :key="board.id">
-                <div>{{board.name}}</div>
+            <div class="board" @drop="onDrop($event, board)" @dragover.prevent @dragenter.prevent v-for="board in boards" :key="board.id">
+                <div class="text-center">{{board.name}}</div>
                 <InputView @on-new-item="(text) => handleNewItem(text, board)"/>
                 <div class="items">
                     <div class="item" v-for="item in board.items" :key="item.id">
