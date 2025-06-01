@@ -59,12 +59,12 @@ const startDrag = (e, board, item) => {
 const onDrop = (e, dest) => {
     const {boardId, itemId} = JSON.parse(e.dataTransfer.getData('text/plain'))
 
-    console.log(boardId, itemId)
-
     const originBoard = boards.find((item) => item.id == boardId)
     const originItem = originBoard.items.find((item) => item.id == itemId)
 
-    console.log(originBoard.name, originItem.title)
+    dest.items.push({...originItem});
+
+    originBoard.items = originBoard.items.filter((item) => item.id !== originItem )
 }
 
 </script>
