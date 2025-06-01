@@ -51,7 +51,6 @@ const handleNewBoard = () => {
     }
 }
 
-
 const startDrag = (e, board, item) => {
     e.dataTransfer.setData('text/plain', JSON.stringify({boardId: board.id, itemId: item.id}))
 }
@@ -66,7 +65,6 @@ const onDrop = (e, dest) => {
 
     originBoard.items = originBoard.items.filter((item) => item.id !== originItem )
 }
-
 </script>
 
 <template>
@@ -88,7 +86,6 @@ const onDrop = (e, dest) => {
             </div>
         </div>
     </div>
-
 </template>
 
 <style scoped>
@@ -106,5 +103,6 @@ const onDrop = (e, dest) => {
         background-color: white;
         padding: 10px;
         box-sizing: border-box;
+        margin: 5px
     }
 </style>

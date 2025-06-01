@@ -1,5 +1,6 @@
 <script setup>
 import TodosView from './components/TodosView.vue';
+
 </script>
 
 <template>
@@ -7,5 +8,4 @@ import TodosView from './components/TodosView.vue';
 </template>
 
 <style scoped>
-
 </style>
