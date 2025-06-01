@@ -52,12 +52,19 @@ const handleNewBoard = () => {
 }
 
 
-const startDrag = () => {
-
+const startDrag = (e, board, item) => {
+    e.dataTransfer.setData('text/plain', JSON.stringify({boardId: board.id, itemId: item.id}))
 }
 
-const onDrop = () => {
+const onDrop = (e, dest) => {
+    const {boardId, itemId} = JSON.parse(e.dataTransfer.getData('text/plain'))
 
+    console.log(boardId, itemId)
+
+    const originBoard = boards.find((item) => item.id == boardId)
+    const originItem = originBoard.items.find((item) => item.id == itemId)
+
+    console.log(originBoard.name, originItem.title)
 }
 
 </script>
@@ -74,7 +81,7 @@ const onDrop = () => {
                 <div class="text-center">{{board.name}}</div>
                 <InputView @on-new-item="(text) => handleNewItem(text, board)"/>
                 <div class="items">
-                    <div class="item" v-for="item in board.items" :key="item.id">
+                    <div class="item" draggable="true" @dragstart="startDrag($event, board, item)" v-for="item in board.items" :key="item.id">
                         {{item.title}}
                     </div>
                 </div>
