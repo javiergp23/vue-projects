@@ -1,9 +1,9 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import SplitBillView from './components/SplitBillView.vue'
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <SplitBillView/>
 </template>
 
 <style scoped>
