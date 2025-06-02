@@ -1,23 +1,22 @@
 <script seupt>
 import { ref } from 'vue';
-import { calculate } from '../stores';
+import { store, calculate } from '../stores';
 
 const total = ref(0)
 const tip = ref(0)
 const people = ref(0)
 
 function handleSubmit(){
-    store.params.total = total;
-    store.params.tip = tip;
-    store.params.people = people;
+    store.params.total = total.value;
+    store.params.tip = tip.value;
+    store.params.people = people.value;
     calculate();
-    
 }
 
 </script>
 
 <template>
-    <form action="" @submit.prevent="handleSubmit">
+    <form @submit.prevent="handleSubmit">
         <div class="form-container">
             <div>
                 <label for="total">
