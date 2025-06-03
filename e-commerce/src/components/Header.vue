@@ -1,8 +1,29 @@
 <script setup>
-import {ref} from 'vue'
+import {ref, onMounted, onUnmounted} from 'vue'
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
+
+const navItems = [
+    {id:1, name: 'Home', link: '#home'},
+    {id:2, name: 'Products', link: '#products'},
+    {id:3, name: 'Categories', link: '#categories'},
+    {id:4, name: 'Offers', link: '#offers'},
+    {id:5, name: 'About', link: '#about'},
+    {id:6, name: 'Contact', link: '#contact'},
+]
+
+const handleScroll = () => {
+    isScrolled.value = window.scrollY > 10
+}
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+    window.removeEverListener('scroll', handleScroll)
+})
 </script>
 
 <template>
@@ -55,6 +76,10 @@ const isMobileMenuOpen = ref(false)
                     </li>
                 </ul>
             </div>
+
+            <section v-if="isMobileMenuOpen" class="md:hidden mt-2 bg-white rounded shadow-md p-4 space-y-3 text-[·5d4037] text-center" aria-label="Mobile navigation">
+                <a :href="item.link" :key="item.id" v-for="item in navItems" class="block hover:text-amber-600 text-sm font-meium">{{item.name}}</a>
+            </section>
          </nav>
     </header>
 </template>
