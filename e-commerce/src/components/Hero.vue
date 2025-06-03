@@ -16,7 +16,7 @@
                     <a href="/products" class="px-6 py-3 bg-pink-900 text-white text-sm font-semibold rounded-lg shadow hover:bg-pink-600 transition">
                         Shop Now
                     </a>
-                    <a href="/offers" class="px-6 py-3 bg-pink-500 text-pink-600 text-sm font-semibold rounded-lg">
+                    <a href="/offers" class="px-6 py-3 border border-pink-500 text-pink-600 text-sm font-semibold rounded-lg">
                         View Offers
                     </a>
                 </div>
