@@ -4,6 +4,6 @@
 
 <template>
     <div>
-        <h1>Vista de home</h1>
+        Hola desde crear
     </div>
 </template>
