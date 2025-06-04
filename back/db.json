@@ -1,23 +1,22 @@
 {
   "libros": [
-    { 
-        "id": "1",
-        "titulo": "primer libro",
-        "autor": "JuanDavid",
-        "ISBN": "123456",
-        "genero": "ficcion",
-        "precio": "1 USB",
-        "disponibilidad": true 
+    {
+      "id": "1",
+      "titulo": "primer libro",
+      "autor": "JuanDavid",
+      "ISBN": "123456",
+      "genero": "ficcion",
+      "precio": "1 USB",
+      "disponibilidad": true
     },
-    { 
-        "id": "2",
-        "titulo": "segundo libro",
-        "autor": "JavierGonzález",
-        "ISBN": "123456",
-        "genero": "ficcion",
-        "precio": "2 USB",
-        "disponibilidad": true 
+    {
+      "id": "2",
+      "titulo": "segundo libro",
+      "autor": "JavierGonzález",
+      "ISBN": "123456",
+      "genero": "ficcion",
+      "precio": "2 USB",
+      "disponibilidad": true
     }
-
   ]
 }
