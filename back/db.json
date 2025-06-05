@@ -12,10 +12,28 @@
     {
       "id": "2",
       "titulo": "segundo libro",
-      "autor": "JavierGonzález",
+      "autor": "JuanDavid",
       "ISBN": "123456",
       "genero": "ficcion",
-      "precio": "2 USB",
+      "precio": "6 USB",
+      "disponibilidad": true
+    },
+    {
+      "id": "3",
+      "titulo": "tercer Libro",
+      "autor": "JuanDavid",
+      "ISBN": "123456",
+      "genero": "ficcion",
+      "precio": "9 USB",
+      "disponibilidad": true
+    },
+    {
+      "id": "4",
+      "titulo": "cuarto libro javier",
+      "autor": "javier javier",
+      "ISBN": "asdasdasdads",
+      "genero": "ficcion",
+      "precio": "5 USB",
       "disponibilidad": true
     }
   ]

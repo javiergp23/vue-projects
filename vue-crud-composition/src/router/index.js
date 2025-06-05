@@ -13,6 +13,11 @@ const router = createRouter({
             path: '/nuevoLibro',
             name: 'nuevoLibro',
             component: () => import('../views/NuevoLibroView.vue')
+        },
+        {
+            path: '/editarLibro/:id',
+            name: 'editarLibro',
+            component: () => import('../views/EditarLibroView.vue')
         }
         
     ]
