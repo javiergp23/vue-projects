@@ -48,8 +48,6 @@ import { useRoute, useRouter} from 'vue-router'
         }
     }
 
-
-    
     onMounted(() => {
         cargarLibro();
     })

@@ -37,10 +37,7 @@ import { RouterLink } from 'vue-router';
 <template>
     <main>
         <div>
-
-        
         <table class="table-container">
-
             <thead>
                     <tr>
                         <th>Id</th>
