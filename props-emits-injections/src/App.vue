@@ -1,7 +1,7 @@
 <script setup>
 import Hijo from '@/components/Hijo.vue'
 import Hijo2  from '@/components/hijo2.vue'
-import { ref } from 'vue'
+import { ref, provide } from 'vue'
 
 const nombre = ref('Javier')
 const edad = ref(20)
@@ -17,6 +17,12 @@ const cambiarValor2 = (valor1, valor2) => {
     nombre2.value = valor1;
     edad2.value = valor2;
 }
+
+
+const canal = ref('Canal de vue')
+
+provide('miCanal', canal)
+
 </script>
 
 <template>

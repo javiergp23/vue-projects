@@ -1,25 +1,29 @@
 <script setup>
+import { inject } from 'vue'
+import Nieto from '@/components/Nieto.vue'
+const canal = inject('miCanal')
 
-const props = defineProps({
-    nombre2: String,
-    edad2: Number
-})
-    
-    const emit = defineEmits(['incrementar'])
-
-    const enviar = () => {
-        emit('incrementar', 'Javier Gonzalez', 33)
-    }    
+const modificar = () => {
+    canal.value = 'Canal modificado desde el nieto'
+}
 </script>
 
 <template>
-    <div>
-        <h1>Componente Hijo</h1>
-        <p>Mi nombre es {{nombre2}} y mi edad es de: {{edad2}}</P>
-        <button @click="enviar">Incrementar datos</button>
+    <div class="wrapper">
+        <h1>Componente Hijo 2</h1>
+        
+        <div>
+            <Nieto/>
+        </div>
+        <button @click="modificar">Modificar</button>
     </div>
+    
 </template>
 
 <style scoped>
-    
+    .wrapper{
+        border: 1px solid black;
+        border-radius: 15px;    
+        padding: 20px;
+    }
 </style>
