@@ -36,17 +36,21 @@ import { RouterLink } from 'vue-router';
 
 <template>
     <main>
-        <table>
+        <div>
+
+        
+        <table class="table-container">
+
             <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Titulo</th>
-                    <th>ISBN</th>
-                    <th>Género</th>
-                    <th>Precios</th>
-                    <th>Disponibilidad</th>
-                    <th>Acciones</th>
-                </tr>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>ISBN</th>
+                        <th>Género</th>
+                        <th>Precios</th>
+                        <th>Disponibilidad</th>
+                        <th>Acciones</th>
+                    </tr>
             </thead>
             <tbody>
                 <tr v-for="libro in libros" :key="libro.id">
@@ -67,18 +71,35 @@ import { RouterLink } from 'vue-router';
                 </tr>
             </tbody>
         </table>
+        </div>
     </main>
 </template>
 
 <style scoped>
+    div{
+        border: 1px solid black;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: black 2px 0px 15px;
+    }
     table{
-        border: 1px solid black;
         padding: 10px;
+        border-collapse: collapse;
     }
-    tbody{
 
-        border: 1px solid black;
+    table, th, td{
+        border-bottom: 1px solid black;
     }
+    td{
+        padding: 18px;
+        text-align: center;
+    }
+
+    th{
+        text-align: center;
+    }
+    
+    
     button{
         color: white;
         margin: 5px;
@@ -105,4 +126,5 @@ import { RouterLink } from 'vue-router';
         background-color: rgb(147, 189, 236);
         color: black;
     }
+  
 </style>
