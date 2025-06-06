@@ -63,17 +63,26 @@
                     Featured Products
                 </h2>
                 <nav class="flex space-x-4" aria-label="Product carousel controls">
-                    <button class="p-2 rounded-full bg-white shadow-md hover:bg-pink-100 text-pink-600 transition-colors" aria-label="Previous slide">
+                    <button @click="prevSlice" class="p-2 rounded-full bg-white shadow-md hover:bg-pink-100 text-pink-600 transition-colors" aria-label="Previous slide">
                         <Icon icon="line-md:arrow-small-left" width="24" height="24" />
                     </button>
-                    <button class="p-2 rounded-full bg-white shadow-md hover:bg-pink-100 text-pink-600 transition-colors" aria-label="Next slide">
+                    <button @click="nextSlice" class="p-2 rounded-full bg-white shadow-md hover:bg-pink-100 text-pink-600 transition-colors" aria-label="Next slide">
                         <Icon icon="line-md:arrow-small-right" width="24" height="24" />
                     </button>
                 </nav>
             </header>
             <section class="relative overflow-hidden">
                 <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:-grid-cols-4 gap-6">
-                    <li class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-105"></li>
+                    <li v-for="product in visibleProducts" :key="id" class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:scale-105">
+                        <article>
+                            <figure class="relative">
+                                <img :src="product.image" :alt="product.name" class="w-full h64 object-cover">
+                            </figure>
+                            <figcaption v-if="product.discount > 0" class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+
+                            </figcaption>
+                        </article>
+                    </li>
                 </ul>
             </section>
         </main>
