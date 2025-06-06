@@ -77,14 +77,36 @@
                         <article>
                             <figure class="relative">
                                 <img :src="product.image" :alt="product.name" class="w-full h64 object-cover">
+                                <figcaption v-if="product.discount > 0" class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    -{{ product.discount }}%
+                                </figcaption>
+                                <button class="absolute top-3 left-3 p-2 bg-hite rounded-full shadow-md hover:bg-pink-100 text-gray-700" aria-label="Add to wishlist">
+                                    <Icon icon="line-md:heart" width="18" height="18"/>
+                                </button>
                             </figure>
-                            <figcaption v-if="product.discount > 0" class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-
-                            </figcaption>
+                            <section class="p-4">
+                                <div class="flex items-center mb-2">
+                                    <Icon v-for="i in 5" :key="i" icon="line-md:star-alt-filled" width="16" :class="i <= Math.floor(product.rating) ? 'text-yellow-400': 'text-gray-300'"/>
+                                    <span class="text-sm text-gray-500 ml-1">{{ product.rating}}</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800 bm-1">{{product.name}}</h3>
+                                <footer class="flex items-center justify-between">
+                                    <div>
+                                        <span class="text-lg font-bold text-pink-600">
+                                            ${{ (product.price * (1-product.discount/100)).toFixed(2) }}
+                                        </span>
+                                        <span v-if="product.discount > 0" class="text-sm text-gray-500 line-through ml-2">
+                                            ${{product.price.toFixed(2)}}
+                                        </span>
+                                    </div>
+                                    <button class="p-2 bg-pink-950 rounded-full"></button>
+                                </footer>
+                            </section>
                         </article>
                     </li>
                 </ul>
             </section>
+        
         </main>
     </section>
 </template>
