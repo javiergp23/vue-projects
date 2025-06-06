@@ -47,6 +47,11 @@
 
     onMounted(() => {
         handleResize();
+        window.addeventListener('resize', handleResize);
+    })
+
+    onBeforeUnmount(() => {
+        window.removeEventListener('resize', handleResize);
     })
 </script>
 
