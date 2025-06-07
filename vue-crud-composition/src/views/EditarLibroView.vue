@@ -4,7 +4,6 @@ import axios from 'axios';
 import { useRoute, useRouter} from 'vue-router'
 
     const router = useRouter();
-
     const editarLibro = ref({
         titulo: '',
         autor: '',
@@ -31,10 +30,9 @@ import { useRoute, useRouter} from 'vue-router'
 
             setTimeout(() => {
                 alert('Libro actualizado exitosamente');
-            }, 200)
+            }, 200);
 
             router.push('/');
-            
             editarLibro.titulo= '',
             editarLibro.autor= '',
             editarLibro.ISBN= '',
@@ -56,7 +54,7 @@ import { useRoute, useRouter} from 'vue-router'
 
 <template>
     <form @submit.prevent="actualizarLibro">
-        <h1>Agrega un nuevo libro</h1>
+        <h1>Agrega nuevos datos de libro</h1>
         <div class="input-container">
             <label for="titulo">Titulo</label>
             <input name="titulo" type="text" v-model="editarLibro.titulo" required placeholder="titulo">
@@ -77,7 +75,7 @@ import { useRoute, useRouter} from 'vue-router'
             <label for="disponibilidad">disponibilidad</label>
             <input name="disponibilidad" type="text" v-model="editarLibro.disponibilidad" required placeholder="disponibilidad">
         </div>
-        <button type="submit">Actualizar Libro</button>
+        <button type="submit">Actualizar Libro actual</button>
     </form>
 </template> 
 
@@ -90,7 +88,6 @@ import { useRoute, useRouter} from 'vue-router'
         display: flex;
         flex-direction: column;
         border-radius: 20px;
-
     }
     h1{
         font-size: 25px;

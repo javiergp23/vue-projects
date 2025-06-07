@@ -2,9 +2,9 @@
 import { RouterLink} from 'vue-router';
 </script>
 
-
 <template>
     <nav>
+        <h1>NavBar Crud</h1>
         <ul>
             <RouterLink to="/" class="buttonLink">Inicio</RouterLink>
             <RouterLink to="/nuevoLibro" class="buttonLink">Nuevo Libro</RouterLink>
