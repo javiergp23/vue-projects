@@ -7,7 +7,7 @@ const emits = defineEmits(['onNewItem'])
 const handleSubmit = () => {
     if(text !== ""){
         emits("onNewItem", text)
-        text.value = ""
+        text.value = "";
     }
 }
 </script>

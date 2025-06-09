@@ -13,7 +13,7 @@ let boards = reactive([
             },
             {
                 id: crypto.randomUUID(),
-                title: 'Resolver Bug'
+                title: 'Resolver Errores'
             }
         ]
     },
@@ -27,7 +27,7 @@ let boards = reactive([
             },
             {
                 id: crypto.randomUUID(),
-                title: 'Code Review'
+                title: 'Revisar codigo'
             }
         ]
     }
@@ -52,14 +52,14 @@ const handleNewBoard = () => {
 }
 
 const startDrag = (e, board, item) => {
-    e.dataTransfer.setData('text/plain', JSON.stringify({boardId: board.id, itemId: item.id}))
+    e.dataTransfer.setData('text/plain', JSON.stringify({boardId: board.id, itemId: item.id}));
 }
 
 const onDrop = (e, dest) => {
     const {boardId, itemId} = JSON.parse(e.dataTransfer.getData('text/plain'))
 
-    const originBoard = boards.find((item) => item.id == boardId)
-    const originItem = originBoard.items.find((item) => item.id == itemId)
+    const originBoard = boards.find((item) => item.id == boardId);
+    const originItem = originBoard.items.find((item) => item.id == itemId);
 
     dest.items.push({...originItem});
 
