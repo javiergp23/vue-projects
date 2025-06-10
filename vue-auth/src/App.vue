@@ -1,13 +1,13 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
-import { RouterView } from 'vue-router'
-import Home from './views/HomeView.vue'
+import {RouterView} from 'vue-router'
+
 </script>
 
 <template>
   <div class="wrapper">
     <NavBar/>
-    <Home/>
+    
     <RouterView/>
   </div>
 </template>
