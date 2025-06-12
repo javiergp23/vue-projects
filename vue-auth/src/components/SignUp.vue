@@ -1,5 +1,9 @@
 <script setup>
 import { reactive } from 'vue';
+import axios from 'axios';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const user = reactive({
     name: '',
@@ -10,7 +14,32 @@ const user = reactive({
 })
 
 const handleSubmit = async () => {
-    console.log(user)
+    try {
+        if(user.password !== user.confirmPassword){
+            alert('passwords do not match')
+            return
+        }
+        const response = await axios.post('http://localhost:3000/users', {
+            name: user.name,
+            lastname: user.lastname,
+            email: user.email,
+            password: user.password
+        })
+        console.log('usuario registrado: ', response.data)
+
+        alert('Usuario registrado exitosamente')
+
+        user.name = ''
+        user.lastname = ''
+        user.email = ''
+        user.password = ''
+        user.confirmPassword = ''
+
+        router.push('/')
+
+    } catch (error) {
+        console.log(error)
+    }
 }
 </script>
 

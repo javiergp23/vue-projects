@@ -36,5 +36,35 @@
       "precio": "5 USB",
       "disponibilidad": true
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "JuanDavid",
+      "lastname": "JuanDavid",
+      "email": "juandavid@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2cda",
+      "name": "daniel",
+      "lastname": "Gonzalez",
+      "email": "gangon@gmail.com",
+      "password": "123123"
+    },
+    {
+      "id": "764c",
+      "name": "javier",
+      "lastname": "Padilla",
+      "email": "javpa2@gmail.com",
+      "password": "123123"
+    },
+    {
+      "id": "5b4b",
+      "name": "Enrique",
+      "lastname": "Ramirez",
+      "email": "enriqra@gmail.com",
+      "password": "456456"
+    }
   ]
 }
