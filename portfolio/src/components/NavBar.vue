@@ -22,7 +22,7 @@ const scrollToSection = (href) => {
 <template>
     <header class="flex justify-between items-center p-6 bg-opacity-50 relative z-20">
         <div class="text-white text-3xl font-bold">LOGO</div>
-        //Mobile togggle button
+        
         <div class="md:hidden z-30"></div>
         <button @click="isMenuOpen = !isMenuOpen" type="button" class="blcok text- focus:outline-none">
             <span v-if="isMenuOpen" class="text-5xl">
@@ -33,7 +33,7 @@ const scrollToSection = (href) => {
             </span>
         </button>
 
-        //links
+       
         <nav
         :class="['fixed inset-0 z-20 flex flex-col items-center justify-center bg-[#111827] md:relative md:bg-transparent md-flex md-justify-between md:flex-row', isMenuOpen ?  'block' : 'hidden'] ">
             <ul class="flex flex-col items-center space-y-5 md:flex-row md:space-x-5 md:space-y-0">
