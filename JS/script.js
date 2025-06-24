@@ -10,3 +10,18 @@ const getUsers = async () => {
         console.error(error, {message: 'Error al obtener usuarios'});
     }
 }
+
+const printData = () => {
+    const users = document.querySelector('#app');
+    const paginated = getPaginatedUsers();
+
+    users.innerHTML = `
+        <ul>
+            ${paginated.map(user => `<li>${user.username}</li>`).join('')}
+        </ul>
+        <div id="paginationControls"></div>
+    `
+    printPaginationsControls();
+}
+
+getUsers();
