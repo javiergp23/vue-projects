@@ -1,22 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-const router = crateRouter({
+const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
             path: '/',
             name: 'listado',
-            componenet: () => import('../views/ListView.vue')
+            component: () => import('../views/ListView.vue')
         },
         {
             path: '/create',
             name: 'crear',
-            componenet: () => import('../views/CreateView.vue')
+            component: () => import('../views/CreateView.vue')
         },
         {
             path: '/edit/:id',
             name: 'editar',
-            componenet: () => import('../views/EditView.vue')
+            component: () => import('../views/EditView.vue')
         }
     ]
 })
