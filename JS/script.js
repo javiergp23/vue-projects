@@ -25,3 +25,12 @@ const printData = () => {
 }
 
 getUsers();
+
+
+const addUser = async () => {
+    try {
+        const response = await fetch('http://localhost:3000/users')
+    } catch (error) {
+        
+    }
+}
